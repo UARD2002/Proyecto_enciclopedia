@@ -143,7 +143,7 @@ $conn->set_charset("utf8mb4");
     $sql = "SELECT * FROM personajes WHERE categoria = 'Equipo azul'";
     $resultado = $conn->query($sql);
 
-    if ($resultado->num_rows > 0) {
+if ($resultado && $resultado->num_rows > 0) {
         while ($row = $resultado->fetch_assoc()) {
             $nombre = strtolower($row["nombre"]);
             $clase = 'container';
@@ -183,4 +183,5 @@ $conn->set_charset("utf8mb4");
     $conn->close();
     ?>
 </body>
+
 </html>
